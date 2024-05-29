@@ -17,7 +17,7 @@ const userSchema=new mongoose.Schema({
         required: true,
         unique: true
     },
-    isBlocked: {
+    isArtist: {
         type: Boolean,
         default: false
     },
