@@ -20,7 +20,7 @@ function intializeSocket(server) {
         });
 
         socket.on('privateChat', (message) => {
-            console.log(message);
+            console.log(message,"message private");
             const recevePrivateMessage=message.senderId
             console.log(recevePrivateMessage);
             io.emit(recevePrivateMessage, message);
@@ -29,7 +29,6 @@ function intializeSocket(server) {
 
         });
         socket.on('groupChat', (a) => {
-            console.log(a,"from sockettt");
             io.emit(a.groupId,a)
             chatController.sendGroupMessage(a)
         })
